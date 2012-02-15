@@ -19,10 +19,11 @@ export BATTERY=1
 export MAILCHECK=0
 
 # virtualenv stuff (put here by the moksha fabric bootstrap process)
-export WORKON_HOME=/home/rjbpop/.virtualenvs;
+export WORKON_HOME=/home/threebean/.virtualenvs;
 source /usr/bin/virtualenvwrapper.sh;
 
 source ~/.zshrc.gitprompt
+source ~/.zsh-git-flow-completion
 export HGMERGE=/usr/bin/meld
 alias fdate="date '+%F'"
 alias gthumb="eog"
@@ -31,8 +32,8 @@ alias mutt="sup"
 bindkey '^[[1;5D' emacs-backward-word
 bindkey '^[[1;5C' emacs-forward-word
 
-PATH=/home/rjbpop/node_modules/.bin:/home/rjbpop/bin:$PATH
-PATH=$PATH:/home/rjbpop/local/bin
+PATH=/home/threebean/node_modules/.bin:/home/threebean/bin:$PATH
+PATH=$PATH:/home/threebean/local/bin
 
 ## Inform users about upgrade path for grml's old zshrc layout, assuming that:
 ## /etc/skel/.zshrc was installed as ~/.zshrc,
