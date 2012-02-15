@@ -1,6 +1,7 @@
 set expandtab
 set tabstop=4
 set smartindent
+set noeb vb t_vb=
 
 " Email coloration in sup
 au BufRead sup.*        set ft=mail
