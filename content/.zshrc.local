@@ -38,6 +38,10 @@ bindkey '^[[1;5C' emacs-forward-word
 PATH=/home/threebean/node_modules/.bin:/home/threebean/bin:$PATH
 PATH=$PATH:/home/threebean/local/bin
 
+# Git stuff
+source ~/.githelpers
+alias glog="pretty_git_log"
+
 ## Inform users about upgrade path for grml's old zshrc layout, assuming that:
 ## /etc/skel/.zshrc was installed as ~/.zshrc,
 ## /etc/zsh/zshrc was installed as ~/.zshrc.global and
