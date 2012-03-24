@@ -50,7 +50,7 @@ class Crawler:
         """
         def stat_string(path):
             stat = os.stat(path)
-            return '%s,%s' % (str(stat.st_size), str(stat.st_mtime))
+            return str(stat.st_size)
 
         return dict((path, stat_string(path))
                     for path in self.crawl()
