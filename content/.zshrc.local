@@ -28,6 +28,9 @@ export HGMERGE=/usr/bin/meld
 alias fdate="date '+%F'"
 alias gthumb="eog"
 alias mutt="sup"
+alias ipython="echo Use bpython"
+
+export BODHI_USER="ralph"
 
 bindkey '^[[1;5D' emacs-backward-word
 bindkey '^[[1;5C' emacs-forward-word
