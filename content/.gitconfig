@@ -2,7 +2,7 @@
 	name = Ralph Bean
 	email = rbean@redhat.com
 [color]
-	ui = always
+    ui = auto
 [branch]
     autosetuprebase = always
 [alias]
