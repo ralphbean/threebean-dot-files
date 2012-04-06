@@ -29,5 +29,7 @@ au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.mak set ft=mako
 
+inoremap <F6> <C-R>=strftime("* %a %b %d %Y Ralph Bean <rbean@redhat.com> ")<CR>
+
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
