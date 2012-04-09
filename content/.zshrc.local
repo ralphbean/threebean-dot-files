@@ -27,7 +27,7 @@ source ~/.zsh-git-flow-completion
 export HGMERGE=/usr/bin/meld
 alias fdate="date '+%F'"
 alias gthumb="eog"
-alias mutt="sup"
+alias sup="mutt"
 alias ipython="echo Use bpython"
 
 export BODHI_USER="ralph"
