@@ -11,22 +11,22 @@ filter="project.isnt:family project.isnt:xmas project.isnt:cersc project.isnt:is
 echo "    (generated at $(date))"
 echo
 echo " -- Tasks completed from $start to $end (back $phrase) -- "
-/usr/local/bin/task work_report $filter end.after:$start
+/usr/bin/task work_report $filter end.after:$start
 
 echo
 echo 
 echo " -- Upcoming tasks -- "
-/usr/local/bin/task next $filter
+/usr/bin/task next $filter
 
 echo
 echo
 echo " -- Summary -- "
-/usr/local/bin/task summary $filter
+/usr/bin/task summary $filter
 
 echo
 echo
 echo " -- History -- "
-/usr/local/bin/task history $filter
-/usr/local/bin/task ghistory $filter
-/usr/local/bin/task burndown.daily
-/usr/local/bin/task burndown
+/usr/bin/task history $filter
+/usr/bin/task ghistory $filter
+/usr/bin/task burndown.daily
+/usr/bin/task burndown
