@@ -46,7 +46,7 @@ if [[ $- == *i* ]] ; then
             echo -ne $color
     }
 
-    PS1='${c_cyan}%n${c_sgr0}@%m ${c_white}%~${c_sgr0} ${c_magen}($(branch_color)$(parse_git_branch)${c_magen})${c_sgr0}
+    PS1='${c_red}%n${c_sgr0}@%m ${c_cyan}%~${c_sgr0} ${c_magen}($(branch_color)$(parse_git_branch)${c_magen})${c_sgr0}
  %% '
 fi
 
