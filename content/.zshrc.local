@@ -30,6 +30,8 @@ alias gthumb="eog"
 alias sup="mutt"
 alias ipython="echo Use bpython"
 
+alias task="task proj.isnt:house"
+
 export BODHI_USER="ralph"
 
 bindkey '^[[1;5D' emacs-backward-word
