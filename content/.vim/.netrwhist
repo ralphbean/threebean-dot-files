@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/threebean/devel/moksha_jqplot_demo/jqplotdemo/templates'
-let g:netrw_dirhist_2='/home/threebean/devel/moksha_jqplotdemo/jqplotdemo/tests/functional'
-let g:netrw_dirhist_3='/home/threebean/devel/mdemos.feeds/mdemos/feeds/streams'
-let g:netrw_dirhist_4='/home/threebean/devel/tw2.jit/tw2/jit/widgets'
-let g:netrw_dirhist_5='/home/threebean/devel/fedmsg/fedmsg'
-let g:netrw_dirhist_6='/home/threebean/.sup/hooks'
