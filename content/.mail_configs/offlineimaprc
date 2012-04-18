@@ -1,0 +1,48 @@
+[general]
+accounts = redhat, rit, gmail
+ui = basic
+
+[Account redhat]
+localrepository = redhat_Local
+remoterepository = redhat_Remote
+
+[Repository redhat_Local]
+type = Maildir
+localfolders = ~/.imap-mail/redhat
+
+[Repository redhat_Remote]
+type = IMAP
+ssl = yes
+remotehost = mail.corp.redhat.com
+remoteuser = rbean
+remotepass = OMGSECRETZ
+
+[Account rit]
+localrepository = rit_Local
+remoterepository = rit_Remote
+ 
+[Repository rit_Local]
+type = Maildir
+localfolders = ~/.imap-mail/rit
+ 
+[Repository rit_Remote]
+type = IMAP
+ssl = yes
+remotehost = mymail.rit.edu
+remoteuser = rjbpop
+remotepass = OMGSECRETZ
+
+[Account gmail]
+localrepository = gmail_Local
+remoterepository = gmail_Remote
+ 
+[Repository gmail_Local]
+type = Maildir
+localfolders = ~/.imap-mail/gmail
+ 
+[Repository gmail_Remote]
+type = IMAP
+ssl = yes
+remotehost = imap.gmail.com
+remoteuser = ralph.bean
+remotepass = OMGSECRETZZZZZZZ

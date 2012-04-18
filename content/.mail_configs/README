@@ -1,0 +1,7 @@
+I keep this folder in my homedir as ~/.mail_configs
+
+I make symlinks for the three config files to my homedir:
+
+    $ ln -s msmtprc ~/.msmtprc
+    $ ln -s offlineimaprc ~/.offlineimaprc
+    $ ln -s mutt/muttrc ~/.muttrc

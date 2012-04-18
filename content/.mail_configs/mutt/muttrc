@@ -1,0 +1,125 @@
+#------------------------------------------------------#
+# ~/.mail_configs/mutt/muttrc
+# Main configuration based on
+# http://www.physics.drexel.edu/liki/index.php/Mutt
+#
+
+# This is where your local mail directory is located.
+# Other mail directories (ie, +"school/inbox") are
+# relative to this.
+#
+set folder = ~/.imap-mail
+
+# This is the list of mailboxes created by offlineimap.  We want to
+# check these for new mail.
+#
+#source ~/.mail_configs/mutt/muttmailboxes
+#
+#inboxes
+mailboxes = +"gmail/INBOX"
+mailboxes = +"rit/INBOX"
+mailboxes = +"redhat/INBOX"
+
+#lists
+mailboxes = +"gmail/turbogears"
+mailboxes = +"gmail/tg-trunk"
+mailboxes = +"redhat/fedora-devel"
+mailboxes = +"redhat/fedora-infra"
+mailboxes = +"redhat/fedora-python"
+mailboxes = +"redhat/fedora-web"
+mailboxes = +"redhat/memo-list"
+mailboxes = +"redhat/osas"
+
+# when you start mutt, this is the inbox that will open by default
+#
+set spoolfile = +"gmail/INBOX"
+set mbox = +"gmail/archive"
+set mbox_type = Maildir
+set postponed = +"gmail/[Gmail].Drafts"
+
+# Other global configuration files to include.
+#
+source ~/.mail_configs/mutt/common
+source ~/.mail_configs/mutt/colors
+#source ~/.mail_configs/mutt/pgp
+
+# A file which will hold you address book
+#
+set alias_file=~/.mail_configs/mutt/aliases
+source $alias_file
+
+# If we are in any directory starting with the following, pull
+# specific settings for that account.
+#
+folder-hook +gmail/.* "source ~/.mail_configs/mutt/gmail"
+folder-hook +rit/.* "source ~/.mail_configs/mutt/rit"
+folder-hook +redhat/.* "source ~/.mail_configs/mutt/redhat"
+#folder-hook . "push \eV"
+
+# These are the addresses that you mutt to think are you.  You can have them be
+# for any 
+#
+alternates ralph.bean@gmail.com rjbpop@rit.edu rbean@redhat.com
+
+# notmuch config -- only compatible with mutt-kz
+set nm_default_uri = "notmuch:///home/threebean/.imap-mail"
+
+# Sidebar basics.
+set sidebar_width=25
+set sidebar_visible=yes
+set sidebar_delim='|'
+
+# color of folders with new mail
+#color sidebar_new  red default
+
+# ctrl-n, ctrl-p to navigate to the next/previous mailbox with unread mail.
+# ctrl-o to open the selected folder.
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+
+macro index,pager x <sidebar-toggle>
+
+# Some keybinds that I use.
+#
+macro index,pager <f2> <change-folder>+"gmail/INBOX"<enter>
+macro index,pager <f3> <change-folder>+"rit/INBOX"<enter>
+macro index,pager <f4> <change-folder>+"redhat/INBOX"<enter>
+macro index,pager <f5> <change-folder>+"gmail/turbogears"<enter>
+macro index,pager <f6> <change-folder>+"gmail/tg-trunk"<enter>
+macro index,pager <f7> <change-folder>+"redhat/fedora-devel"<enter>
+macro index,pager <f8> <change-folder>+"redhat/fedora-infra"<enter>
+macro index,pager <f9> <change-folder>+"redhat/fedora-python"<enter>
+macro index,pager <f10> <change-folder>+"redhat/fedora-web"<enter>
+macro index,pager <f11> <change-folder>+"redhat/memo-list"<enter>
+macro index,pager <f12> <change-folder>+"redhat/osas"<enter>
+
+macro index,pager A <tag-subthread><tag-prefix-cond><save-message>+gmail/archive<enter><enter><tag-prefix-cond><quasi-delete><untag-pattern>.*
+macro index,pager a <tag-entry><tag-prefix-cond><save-message>+gmail/archive<enter><enter><tag-prefix-cond><quasi-delete><untag-pattern>.*
+
+macro index,pager t <tag-subthread>
+macro index,pager P <sync-mailbox>
+macro index,pager F <vfolder-from-query>
+
+
+# no-op hack.  :/
+macro index x <end-cond>
+
+#macro index x "push \e"
+
+
+macro index k <previous-entry>
+macro index j <next-entry>
+macro pager K <previous-entry>
+macro pager J <next-entry>
+
+macro generic	\c<Space>	":source ~/.mail_configs/mutt/muttrc\n" "Reload mutt's configuration file"
+macro index	\cn		<next-unread-mailbox>
+macro pager	j		<next-line>
+macro pager	k		<previous-line>
+macro pager	<PageUp> 	<previous-undeleted>
+macro pager	<PageDown>	<next-undeleted>
+macro pager	\cb 		<pipe-entry>'w3m'<enter> 'Follow links in w3m'
+
+# Some global booleans for awesome
+  set forward_decode
+  set forward_format="Fwd: %s"
