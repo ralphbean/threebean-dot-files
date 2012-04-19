@@ -60,6 +60,7 @@ folder-hook +redhat/.* "source ~/.mail_configs/mutt/redhat"
 # for any 
 #
 alternates ralph.bean@gmail.com rjbpop@rit.edu rbean@redhat.com
+set sendmail="/usr/bin/msmtp -a gmail"
 
 # notmuch config -- only compatible with mutt-kz
 set nm_default_uri = "notmuch:///home/threebean/.imap-mail"

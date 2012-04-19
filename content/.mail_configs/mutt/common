@@ -13,10 +13,7 @@ set mail_check = 60             # Check for new mail in all mailboxes
                                  # every minute
 set timeout = 30
 
-# Required for msmtp to know which account to use
-# for emails
-#
-set sendmail = /usr/bin/msmtp
+
 
 # Sort by threads and last-date-received:
 # will be gmail's style of threading, if the threading
