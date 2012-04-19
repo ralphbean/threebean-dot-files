@@ -31,5 +31,14 @@ au BufNewFile,BufRead *.mak set ft=mako
 
 inoremap <F6> <C-R>=strftime("* %a %b %d %Y Ralph Bean <rbean@redhat.com> ")<CR>
 
+" Shortcut to rapidly toggle `set paste`    CONTROL-P
+nmap <C-p> :set paste!<CR>
+
+" Shortcut to rapidly toggle `set list`     CONTROL-L
+nmap <C-l> :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+"set listchars=tab:▸\ ,eol:¬
+
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
