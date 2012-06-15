@@ -64,7 +64,7 @@ def main():
     nevr = rpmspec(q=spec).split()[0].rsplit('.', 2)[0]
     print "Processing %r" % nevr
     for branch in branches:
-        nevra = nevr + branch['long']
+        nevra = nevr + '.' + branch['long']
         print "Working on %r, %r" % (branch['short'], nevra)
         print git.checkout(branch['short'])
 
