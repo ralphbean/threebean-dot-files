@@ -13,6 +13,17 @@ au BufRead sup.*        set ft=mail
 
 :filetype indent on
 
+" indent folding for python?
+" TODO -- how to set this only for python
+:set foldmethod=indent
+:set foldnestmax=2
+nnoremap <space> za
+vnoremap <space> zf
+"nnoremap <Ctrl-space> zR
+"vnoremap <Ctrl-space> zM
+
+
+
 let g:js_indent_log = 0
 set textwidth=80
 
@@ -41,4 +52,21 @@ nmap <C-l> :set list!<CR>
 "set listchars=tab:▸\ ,eol:¬
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%80v.\+/
+
+" Nice .rst tools from decause
+python << endpython
+import vim
+
+def rstheader(char='='):
+    (row, col) = vim.current.window.cursor
+    line = vim.current.buffer[row-1]
+    underline = ''.join([char for c in line.strip()])
+    vim.current.buffer[row:row] = [underline]
+
+endpython
+
+map ,= :python rstheader('=')<Enter>
+map ,- :python rstheader('-')<Enter>
+map ,~ :python rstheader('~')<Enter>
+map ,^ :python rstheader('^')<Enter>
